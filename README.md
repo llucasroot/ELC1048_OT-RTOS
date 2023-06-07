@@ -13,7 +13,7 @@ projeto OpenThread (equipe APP) e
 portabilidade do projeto para a plataforma SAM
 R21 Xplorer Pro (equipe HAL).
 
-##Organização e requisitos do projeto
+## Organização e requisitos do projeto
 •  Duas equipes de projeto (APP ou HAL, 8
 integrantes cada).
 • Cada equipe deve montar um cronograma de
@@ -73,26 +73,21 @@ semana de exames finais).
 • Acompanhamento semanal (terças-feiras).
 • Execução no laboratório (quintas-feiras).
 • Anotações compartilhadas em:
-https://docs.google.com/document/d/1wH1syYwm5gm5lCkSNS
-Cq9IpZZ0ZUaTe_Ln4mlxfcBb4/edit?usp=sharing
+https://docs.google.com/document/d/1wH1syYwm5gm5lCkSNSCq9IpZZ0ZUaTe_Ln4mlxfcBb4/edit?usp=sharing
 
 
 # OpenThread RTOS
-
 The OpenThread RTOS project provides an integration of:
-
 1. [OpenThread](https://github.com/openthread/openthread), an open-source implementation of the Thread networking protocol.
 2. [LwIP](https://git.savannah.nongnu.org/git/lwip/lwip-contrib.git/), a small independent implementation of the TCP/IP protocol suite.
 3. [FreeRTOS](https://www.freertos.org/), a real time operating system for microcontrollers.
 
 OpenThread RTOS includes a number of application-layer demonstrations, including:
-
 - [MQTT](http://mqtt.org/), a machine-to-machine (M2M)/"Internet of Things" connectivity protocol.
 - [HTTP](https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol), the underlying protocol used by the World Wide Web.
 - [TCP](https://en.wikipedia.org/wiki/Transmission_Control_Protocol), one of the main transport protocols in the Internet protocol suite.
 
 ## Getting started
-
 ### Linux simulation
 
 ```sh
