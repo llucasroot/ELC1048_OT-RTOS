@@ -1,12 +1,12 @@
 #include <atmel_start.h>
 #include <stdio.h>
-#include <bno055.h>
+#include "lib/BNO055/bno055.h"
 
 #define VCC_TARGET 3.3 // Tensão VCC da placa de R21 usada como referência
 
 volatile bool conversion_done = false;
 struct io_descriptor* USART_debug_io;
-struct bno055_dev bno055;
+struct bno055_dev bno055; // Corrigido para usar o tipo 'bno055_dev'
 
 /**
  * Faz a conversão analógico digital do sensor de luz e avisa quando terminar
@@ -140,14 +140,14 @@ int main(void)
     char temperature_str[10];
 
     /* Inicializa o acelerômetro */
-    struct bno055_init(&bno055);
+    bno055_init(&bno055); // Corrigido para usar 'bno055_init' em vez de 'struct bno055_init'
 
     while (1) {
         /* Lê os dados de aceleração do acelerômetro */
-        struct bno055_read_acceleration(&bno055, &acceleration_x, &acceleration_y, &acceleration_z);
+        bno055_read_acceleration(&bno055, &acceleration_x, &acceleration_y, &acceleration_z); // Corrigido para usar 'bno055_read_acceleration' em vez de 'struct bno055_read_acceleration'
 
         /* Lê a temperatura do sensor */
-        temperature = bno055_get_temperature(&bno055);
+        temperature = bno055_get_temperature(&bno055); // Corrigido para usar 'bno055_get_temperature' em vez de 'struct bno055_get_temperature'
 
         /* Formata as acelerações como strings */
         floatToString(acceleration_x, acceleration_str, 4);
