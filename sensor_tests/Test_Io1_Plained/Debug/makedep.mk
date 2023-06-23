@@ -2,6 +2,8 @@
 # Automatically-generated file. Do not edit or delete the file
 ################################################################################
 
+at30tse75x.c
+
 atmel_start.c
 
 Device_Startup\startup_samr21.c
@@ -19,6 +21,8 @@ hal\src\hal_atomic.c
 hal\src\hal_delay.c
 
 hal\src\hal_gpio.c
+
+hal\src\hal_i2c_m_sync.c
 
 hal\src\hal_init.c
 
@@ -56,6 +60,8 @@ hpl\sysctrl\hpl_sysctrl.c
 
 hpl\systick\hpl_systick.c
 
+IO1X_Plained_drivers.c
+
 main.c
 
 stdio_redirect\gcc\read.c
@@ -65,4 +71,6 @@ stdio_redirect\gcc\write.c
 stdio_redirect\stdio_io.c
 
 stdio_start.c
+
+temperature_sensor.c
 

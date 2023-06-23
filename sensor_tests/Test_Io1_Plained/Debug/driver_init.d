@@ -99,7 +99,8 @@ driver_init.d driver_init.o: .././driver_init.c .././driver_init.h \
  ../hal/utils/include/utils_assert.h \
  ../hal/include/hpl_missing_features.h ../hal/include/hal_usart_sync.h \
  ../hal/include/hal_io.h ../hal/include/hpl_usart_sync.h \
- ../hal/include/hpl_usart.h ../Config/peripheral_clk_config.h \
+ ../hal/include/hpl_usart.h ../hal/include/hal_i2c_m_sync.h \
+ ../hal/include/hpl_i2c_m_sync.h ../Config/peripheral_clk_config.h \
  ../hal/utils/include/utils.h ../hpl/gclk/hpl_gclk_base.h \
  ../hpl/pm/hpl_pm_base.h ../hpl/adc/hpl_adc_base.h \
  ../hal/include/hpl_adc_sync.h
@@ -365,6 +366,10 @@ C:\Program\ Files\ (x86)\Atmel\Studio\7.0\Packs\atmel\SAMR21_DFP\1.1.72\include/
 ../hal/include/hpl_usart_sync.h:
 
 ../hal/include/hpl_usart.h:
+
+../hal/include/hal_i2c_m_sync.h:
+
+../hal/include/hpl_i2c_m_sync.h:
 
 ../Config/peripheral_clk_config.h:
 

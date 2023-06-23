@@ -1,0 +1,38 @@
+Designator Footprint               Mid X         Mid Y         Ref X         Ref Y         Pad X         Pad Y TB      Rotation Comment        
+
+J103       AP8-00745            25.975mm        3.57mm      25.975mm        3.57mm      28.515mm        3.57mm  T        180.00 Same as A08-1614 but with 1mm hole for optimal reflow soldering (no misalignment of the component)
+E1         AP8-00192         -131.9188mm   -156.6436mm          26mm          15mm   -131.9188mm   -156.6436mm  B        180.00 RUBBER FEET    
+J105       AP8-00257              26.8mm        27.1mm        26.8mm        27.1mm       29.34mm      27.735mm  T        180.00 HEADER 2x5     
+LABEL1     AP8-00317         -131.9188mm   -156.6436mm       15.45mm          24mm   -131.9188mm   -156.6436mm  B        270.00                
+XC100      AP7-00044            14.825mm         9.1mm       17.95mm         9.1mm       17.95mm         7.8mm  T         90.00 Farnell order no:1539364
+U101       AP6-00430             20.15mm          15mm       20.15mm          15mm        22.4mm     13.4375mm  T        180.00 NMM15011BC     
+U100       AP4-00018              8.95mm        26.6mm        8.95mm        26.6mm           8mm       27.55mm  T        360.00                
+R112       AP2-00000              19.9mm       18.75mm        19.9mm       18.75mm        19.9mm       19.35mm  T        270.00 R2             
+R107       AP2-00000              15.2mm       16.15mm        15.2mm       16.15mm        14.6mm       16.15mm  T        360.00 R2             
+R106       AP2-00000              25.2mm          16mm        25.2mm          16mm        24.6mm          16mm  T        360.00 R2             
+R105       AP2-00000           10.6751mm      18.925mm     10.6751mm      18.925mm     11.2751mm      18.925mm  T        180.00 R2             
+R104       AP2-00000           10.6751mm      21.225mm     10.6751mm      21.225mm     11.2751mm      21.225mm  T        180.00 R2             
+R103       AP2-00000           10.6751mm      20.075mm     10.6751mm      20.075mm     11.2751mm      20.075mm  T        180.00 R2             
+R102       AP2-00000              15.2mm        14.5mm        15.2mm        14.5mm        15.8mm        14.5mm  T        180.00 R2             
+R101       AP2-00000              15.2mm       13.35mm        15.2mm       13.35mm        15.8mm       13.35mm  T        180.00 R2             
+R100       AP2-00000             12.85mm          26mm       12.85mm          26mm       12.85mm        25.4mm  T         90.00                
+J100       AP8-00621               3.8mm          15mm         3.8mm          15mm        5.07mm       26.43mm  T         90.00                
+D101       AP4-00104            14.975mm        20.1mm      14.975mm        20.1mm      13.475mm       20.85mm  T          0.00 D?             
+D100       AP4-00036            11.575mm      25.825mm      11.575mm      25.825mm      11.575mm      25.125mm  T         90.00 Farnell# 1615809
+C101       AP1-00001              19.7mm       10.85mm        19.7mm       10.85mm        19.7mm        10.3mm  T         90.00 CAP-NONPOL     
+C102       AP1-00001              19.7mm        8.35mm        19.7mm        8.35mm        19.7mm         8.9mm  T        270.00 CAP-NONPOL     
+C100       AP1-00001            12.125mm        27.8mm      12.125mm        27.8mm      12.675mm        27.8mm  T        180.00 Recommended by Escatec. No datasheet available yet.
+C103       AP1-00002           25.0499mm     12.8999mm     25.0499mm     12.8999mm     24.2499mm     12.8999mm  T        360.00 CAP-NONPOL     
+C104       AP1-00001           25.0499mm     11.5999mm     25.0499mm     11.5999mm     24.4999mm     11.5999mm  T        360.00 CAP-NONPOL     
+C105       AP1-00053            24.475mm       14.75mm      24.475mm       14.75mm          24mm       14.75mm  T        360.00 100n           
+C106       AP1-00001            8.3251mm        3.57mm      8.3251mm        3.57mm      8.3251mm        3.02mm  T         90.00 Recommended by Escatec. No datasheet available yet.
+C107       AP1-00053            7.3251mm        3.57mm      7.3251mm        3.57mm      7.3251mm       3.095mm  T         90.00 100n           
+C108       AP1-00053            20.925mm          19mm      20.925mm          19mm      20.925mm      18.525mm  T         90.00 100n           
+C109       AP1-00053            18.875mm     18.4999mm      18.875mm     18.4999mm      18.875mm     18.0249mm  T         90.00 100n           
+J104       AP8-00733            11.775mm        3.57mm      11.775mm        3.57mm      10.505mm        3.57mm  T        360.00 HEADER 1x2     
+R108       AP2-00000            29.515mm      12.775mm      29.515mm      12.775mm      29.515mm      12.175mm  T         90.00 R2             
+R109       AP2-00000            29.515mm      10.275mm      29.515mm      10.275mm      29.515mm      10.875mm  T        270.00 R2             
+R110       AP2-00000             28.05mm      12.775mm       28.05mm      12.775mm       28.05mm      12.175mm  T         90.00 R2             
+R111       AP2-00000             28.05mm      10.275mm       28.05mm      10.275mm       28.05mm      10.875mm  T        270.00 R2             
+R113       AP2-00000            11.775mm       5.925mm      11.775mm       5.925mm      12.375mm       5.925mm  T        180.00 R2             
+

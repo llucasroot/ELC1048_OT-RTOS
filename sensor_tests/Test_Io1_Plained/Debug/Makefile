@@ -61,6 +61,7 @@ SUBDIRS :=  \
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS +=  \
+../at30tse75x.c \
 ../atmel_start.c \
 ../Device_Startup/startup_samr21.c \
 ../Device_Startup/system_samr21.c \
@@ -70,6 +71,7 @@ C_SRCS +=  \
 ../hal/src/hal_atomic.c \
 ../hal/src/hal_delay.c \
 ../hal/src/hal_gpio.c \
+../hal/src/hal_i2c_m_sync.c \
 ../hal/src/hal_init.c \
 ../hal/src/hal_io.c \
 ../hal/src/hal_sleep.c \
@@ -88,11 +90,13 @@ C_SRCS +=  \
 ../hpl/sercom/hpl_sercom.c \
 ../hpl/sysctrl/hpl_sysctrl.c \
 ../hpl/systick/hpl_systick.c \
+../IO1X_Plained_drivers.c \
 ../main.c \
 ../stdio_redirect/gcc/read.c \
 ../stdio_redirect/gcc/write.c \
 ../stdio_redirect/stdio_io.c \
-../stdio_start.c
+../stdio_start.c \
+../temperature_sensor.c
 
 
 PREPROCESSING_SRCS += 
@@ -102,6 +106,7 @@ ASM_SRCS +=
 
 
 OBJS +=  \
+at30tse75x.o \
 atmel_start.o \
 Device_Startup/startup_samr21.o \
 Device_Startup/system_samr21.o \
@@ -111,6 +116,7 @@ hal/src/hal_adc_async.o \
 hal/src/hal_atomic.o \
 hal/src/hal_delay.o \
 hal/src/hal_gpio.o \
+hal/src/hal_i2c_m_sync.o \
 hal/src/hal_init.o \
 hal/src/hal_io.o \
 hal/src/hal_sleep.o \
@@ -129,13 +135,16 @@ hpl/pm/hpl_pm.o \
 hpl/sercom/hpl_sercom.o \
 hpl/sysctrl/hpl_sysctrl.o \
 hpl/systick/hpl_systick.o \
+IO1X_Plained_drivers.o \
 main.o \
 stdio_redirect/gcc/read.o \
 stdio_redirect/gcc/write.o \
 stdio_redirect/stdio_io.o \
-stdio_start.o
+stdio_start.o \
+temperature_sensor.o
 
 OBJS_AS_ARGS +=  \
+at30tse75x.o \
 atmel_start.o \
 Device_Startup/startup_samr21.o \
 Device_Startup/system_samr21.o \
@@ -145,6 +154,7 @@ hal/src/hal_adc_async.o \
 hal/src/hal_atomic.o \
 hal/src/hal_delay.o \
 hal/src/hal_gpio.o \
+hal/src/hal_i2c_m_sync.o \
 hal/src/hal_init.o \
 hal/src/hal_io.o \
 hal/src/hal_sleep.o \
@@ -163,13 +173,16 @@ hpl/pm/hpl_pm.o \
 hpl/sercom/hpl_sercom.o \
 hpl/sysctrl/hpl_sysctrl.o \
 hpl/systick/hpl_systick.o \
+IO1X_Plained_drivers.o \
 main.o \
 stdio_redirect/gcc/read.o \
 stdio_redirect/gcc/write.o \
 stdio_redirect/stdio_io.o \
-stdio_start.o
+stdio_start.o \
+temperature_sensor.o
 
 C_DEPS +=  \
+at30tse75x.d \
 atmel_start.d \
 Device_Startup/startup_samr21.d \
 Device_Startup/system_samr21.d \
@@ -179,6 +192,7 @@ hal/src/hal_adc_async.d \
 hal/src/hal_atomic.d \
 hal/src/hal_delay.d \
 hal/src/hal_gpio.d \
+hal/src/hal_i2c_m_sync.d \
 hal/src/hal_init.d \
 hal/src/hal_io.d \
 hal/src/hal_sleep.d \
@@ -197,13 +211,16 @@ hpl/pm/hpl_pm.d \
 hpl/sercom/hpl_sercom.d \
 hpl/sysctrl/hpl_sysctrl.d \
 hpl/systick/hpl_systick.d \
+IO1X_Plained_drivers.d \
 main.d \
 stdio_redirect/gcc/read.d \
 stdio_redirect/gcc/write.d \
 stdio_redirect/stdio_io.d \
-stdio_start.d
+stdio_start.d \
+temperature_sensor.d
 
 C_DEPS_AS_ARGS +=  \
+at30tse75x.d \
 atmel_start.d \
 Device_Startup/startup_samr21.d \
 Device_Startup/system_samr21.d \
@@ -213,6 +230,7 @@ hal/src/hal_adc_async.d \
 hal/src/hal_atomic.d \
 hal/src/hal_delay.d \
 hal/src/hal_gpio.d \
+hal/src/hal_i2c_m_sync.d \
 hal/src/hal_init.d \
 hal/src/hal_io.d \
 hal/src/hal_sleep.d \
@@ -231,11 +249,13 @@ hpl/pm/hpl_pm.d \
 hpl/sercom/hpl_sercom.d \
 hpl/sysctrl/hpl_sysctrl.d \
 hpl/systick/hpl_systick.d \
+IO1X_Plained_drivers.d \
 main.d \
 stdio_redirect/gcc/read.d \
 stdio_redirect/gcc/write.d \
 stdio_redirect/stdio_io.d \
-stdio_start.d
+stdio_start.d \
+temperature_sensor.d
 
 OUTPUT_FILE_PATH +=Test_Io1_Plained.elf
 
@@ -253,6 +273,13 @@ LINKER_SCRIPT_DEP+=  \
 
 
 # AVR32/GNU C Compiler
+./at30tse75x.o: .././at30tse75x.c
+	@echo Building file: $<
+	@echo Invoking: ARM/GNU C Compiler : 6.3.1
+	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\arm\arm-gnu-toolchain\bin\arm-none-eabi-gcc.exe$(QUOTE)  -x c -mthumb -D__SAMR21G18A__ -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\arm\CMSIS\5.4.0\CMSIS\Core\Include" -I"../Config" -I".." -I"../examples" -I"../hal/include" -I"../hal/utils/include" -I"../hpl/adc" -I"../hpl/core" -I"../hpl/dmac" -I"../hpl/gclk" -I"../hpl/pm" -I"../hpl/port" -I"../hpl/sercom" -I"../hpl/sysctrl" -I"../hpl/systick" -I"../hri" -I"../stdio_redirect" -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\SAMR21_DFP\1.1.72\include"  -Og -ffunction-sections -mlong-calls -g3 -Wall -mcpu=cortex-m0plus -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	@echo Finished building: $<
+	
+
 ./atmel_start.o: .././atmel_start.c
 	@echo Building file: $<
 	@echo Invoking: ARM/GNU C Compiler : 6.3.1
@@ -310,6 +337,13 @@ hal/src/hal_delay.o: ../hal/src/hal_delay.c
 	
 
 hal/src/hal_gpio.o: ../hal/src/hal_gpio.c
+	@echo Building file: $<
+	@echo Invoking: ARM/GNU C Compiler : 6.3.1
+	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\arm\arm-gnu-toolchain\bin\arm-none-eabi-gcc.exe$(QUOTE)  -x c -mthumb -D__SAMR21G18A__ -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\arm\CMSIS\5.4.0\CMSIS\Core\Include" -I"../Config" -I".." -I"../examples" -I"../hal/include" -I"../hal/utils/include" -I"../hpl/adc" -I"../hpl/core" -I"../hpl/dmac" -I"../hpl/gclk" -I"../hpl/pm" -I"../hpl/port" -I"../hpl/sercom" -I"../hpl/sysctrl" -I"../hpl/systick" -I"../hri" -I"../stdio_redirect" -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\SAMR21_DFP\1.1.72\include"  -Og -ffunction-sections -mlong-calls -g3 -Wall -mcpu=cortex-m0plus -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	@echo Finished building: $<
+	
+
+hal/src/hal_i2c_m_sync.o: ../hal/src/hal_i2c_m_sync.c
 	@echo Building file: $<
 	@echo Invoking: ARM/GNU C Compiler : 6.3.1
 	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\arm\arm-gnu-toolchain\bin\arm-none-eabi-gcc.exe$(QUOTE)  -x c -mthumb -D__SAMR21G18A__ -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\arm\CMSIS\5.4.0\CMSIS\Core\Include" -I"../Config" -I".." -I"../examples" -I"../hal/include" -I"../hal/utils/include" -I"../hpl/adc" -I"../hpl/core" -I"../hpl/dmac" -I"../hpl/gclk" -I"../hpl/pm" -I"../hpl/port" -I"../hpl/sercom" -I"../hpl/sysctrl" -I"../hpl/systick" -I"../hri" -I"../stdio_redirect" -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\SAMR21_DFP\1.1.72\include"  -Og -ffunction-sections -mlong-calls -g3 -Wall -mcpu=cortex-m0plus -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
@@ -442,6 +476,13 @@ hpl/systick/hpl_systick.o: ../hpl/systick/hpl_systick.c
 	@echo Finished building: $<
 	
 
+./IO1X_Plained_drivers.o: .././IO1X_Plained_drivers.c
+	@echo Building file: $<
+	@echo Invoking: ARM/GNU C Compiler : 6.3.1
+	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\arm\arm-gnu-toolchain\bin\arm-none-eabi-gcc.exe$(QUOTE)  -x c -mthumb -D__SAMR21G18A__ -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\arm\CMSIS\5.4.0\CMSIS\Core\Include" -I"../Config" -I".." -I"../examples" -I"../hal/include" -I"../hal/utils/include" -I"../hpl/adc" -I"../hpl/core" -I"../hpl/dmac" -I"../hpl/gclk" -I"../hpl/pm" -I"../hpl/port" -I"../hpl/sercom" -I"../hpl/sysctrl" -I"../hpl/systick" -I"../hri" -I"../stdio_redirect" -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\SAMR21_DFP\1.1.72\include"  -Og -ffunction-sections -mlong-calls -g3 -Wall -mcpu=cortex-m0plus -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	@echo Finished building: $<
+	
+
 ./main.o: .././main.c
 	@echo Building file: $<
 	@echo Invoking: ARM/GNU C Compiler : 6.3.1
@@ -471,6 +512,13 @@ stdio_redirect/stdio_io.o: ../stdio_redirect/stdio_io.c
 	
 
 ./stdio_start.o: .././stdio_start.c
+	@echo Building file: $<
+	@echo Invoking: ARM/GNU C Compiler : 6.3.1
+	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\arm\arm-gnu-toolchain\bin\arm-none-eabi-gcc.exe$(QUOTE)  -x c -mthumb -D__SAMR21G18A__ -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\arm\CMSIS\5.4.0\CMSIS\Core\Include" -I"../Config" -I".." -I"../examples" -I"../hal/include" -I"../hal/utils/include" -I"../hpl/adc" -I"../hpl/core" -I"../hpl/dmac" -I"../hpl/gclk" -I"../hpl/pm" -I"../hpl/port" -I"../hpl/sercom" -I"../hpl/sysctrl" -I"../hpl/systick" -I"../hri" -I"../stdio_redirect" -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\SAMR21_DFP\1.1.72\include"  -Og -ffunction-sections -mlong-calls -g3 -Wall -mcpu=cortex-m0plus -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	@echo Finished building: $<
+	
+
+./temperature_sensor.o: .././temperature_sensor.c
 	@echo Building file: $<
 	@echo Invoking: ARM/GNU C Compiler : 6.3.1
 	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\arm\arm-gnu-toolchain\bin\arm-none-eabi-gcc.exe$(QUOTE)  -x c -mthumb -D__SAMR21G18A__ -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\arm\CMSIS\5.4.0\CMSIS\Core\Include" -I"../Config" -I".." -I"../examples" -I"../hal/include" -I"../hal/utils/include" -I"../hpl/adc" -I"../hpl/core" -I"../hpl/dmac" -I"../hpl/gclk" -I"../hpl/pm" -I"../hpl/port" -I"../hpl/sercom" -I"../hpl/sysctrl" -I"../hpl/systick" -I"../hri" -I"../stdio_redirect" -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\SAMR21_DFP\1.1.72\include"  -Og -ffunction-sections -mlong-calls -g3 -Wall -mcpu=cortex-m0plus -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 

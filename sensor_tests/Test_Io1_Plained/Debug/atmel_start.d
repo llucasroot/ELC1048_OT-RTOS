@@ -99,7 +99,8 @@ atmel_start.d atmel_start.o: .././atmel_start.c ../atmel_start.h \
  ../hal/utils/include/utils_assert.h \
  ../hal/include/hpl_missing_features.h ../hal/include/hal_usart_sync.h \
  ../hal/include/hal_io.h ../hal/include/hpl_usart_sync.h \
- ../hal/include/hpl_usart.h ../stdio_start.h \
+ ../hal/include/hpl_usart.h ../hal/include/hal_i2c_m_sync.h \
+ ../hal/include/hpl_i2c_m_sync.h ../stdio_start.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\arm\arm-gnu-toolchain\arm-none-eabi\include\stdio.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\arm\arm-gnu-toolchain\arm-none-eabi\include\_ansi.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\arm\arm-gnu-toolchain\arm-none-eabi\include\newlib.h \
@@ -388,6 +389,10 @@ C:\Program\ Files\ (x86)\Atmel\Studio\7.0\Packs\atmel\SAMR21_DFP\1.1.72\include/
 ../hal/include/hpl_usart_sync.h:
 
 ../hal/include/hpl_usart.h:
+
+../hal/include/hal_i2c_m_sync.h:
+
+../hal/include/hpl_i2c_m_sync.h:
 
 ../stdio_start.h:
 

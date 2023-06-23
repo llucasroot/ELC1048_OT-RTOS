@@ -260,6 +260,46 @@ drivers:
         configuration:
           core_gclk_selection: Generic clock generator 0
           slow_gclk_selection: Generic clock generator 3
+  I2C_temperature:
+    user_label: I2C_temperature
+    definition: Atmel:SAMR21_Drivers:0.0.1::SAMR21G18A-MF::SERCOM1::driver_config_definition::I2C.Master.Standard~2FFast-mode::HAL:Driver:I2C.Master.Sync
+    functionality: I2C
+    api: HAL:Driver:I2C_Master_Sync
+    configuration:
+      i2c_master_advanced: false
+      i2c_master_arch_dbgstop: Keep running
+      i2c_master_arch_inactout: Disabled
+      i2c_master_arch_lowtout: false
+      i2c_master_arch_mexttoen: false
+      i2c_master_arch_runstdby: false
+      i2c_master_arch_sdahold: 300-600ns hold time
+      i2c_master_arch_sexttoen: false
+      i2c_master_arch_trise: 215
+      i2c_master_baud_rate: 100000
+    optional_signals: []
+    variant:
+      specification: SDA=0, SCL=1
+      required_signals:
+      - name: SERCOM1/PAD/0
+        pad: PA16
+        label: SDA
+      - name: SERCOM1/PAD/1
+        pad: PA17
+        label: SCL
+    clocks:
+      domain_group:
+        nodes:
+        - name: Core
+          input: Generic clock generator 0
+          external: false
+          external_frequency: 0
+        - name: Slow
+          input: Generic clock generator 3
+          external: false
+          external_frequency: 0
+        configuration:
+          core_gclk_selection: Generic clock generator 0
+          slow_gclk_selection: Generic clock generator 3
   DELAY_0:
     user_label: DELAY_0
     definition: Atmel:SAMR21_Drivers:0.0.1::SAMR21G18A-MF::SysTick::driver_config_definition::Delay::HAL:Driver:Delay
@@ -655,6 +695,18 @@ pads:
     definition: Atmel:SAMR21_Drivers:0.0.1::SAMR21G18A-MF::pad::PA06
     mode: Analog
     user_label: PA06
+    configuration: null
+  PA16:
+    name: PA16
+    definition: Atmel:SAMR21_Drivers:0.0.1::SAMR21G18A-MF::pad::PA16
+    mode: I2C
+    user_label: PA16
+    configuration: null
+  PA17:
+    name: PA17
+    definition: Atmel:SAMR21_Drivers:0.0.1::SAMR21G18A-MF::pad::PA17
+    mode: I2C
+    user_label: PA17
     configuration: null
   LED:
     name: PA18

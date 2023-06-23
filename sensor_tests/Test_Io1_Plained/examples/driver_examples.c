@@ -36,6 +36,16 @@ void USART_debug_example(void)
 	io_write(io, (uint8_t *)"Hello World!", 12);
 }
 
+void I2C_temperature_example(void)
+{
+	struct io_descriptor *I2C_temperature_io;
+
+	i2c_m_sync_get_io_descriptor(&I2C_temperature, &I2C_temperature_io);
+	i2c_m_sync_enable(&I2C_temperature);
+	i2c_m_sync_set_slaveaddr(&I2C_temperature, 0x12, I2C_M_SEVEN);
+	io_write(I2C_temperature_io, (uint8_t *)"Hello World!", 12);
+}
+
 void delay_example(void)
 {
 	delay_ms(5000);

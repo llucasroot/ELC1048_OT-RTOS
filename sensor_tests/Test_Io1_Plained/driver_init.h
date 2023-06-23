@@ -25,17 +25,25 @@ extern "C" {
 
 #include <hal_usart_sync.h>
 
+#include <hal_i2c_m_sync.h>
+
 #include <hal_delay.h>
 
 extern struct adc_async_descriptor Light_sensor_ADC;
 
 extern struct usart_sync_descriptor USART_debug;
 
+extern struct i2c_m_sync_desc I2C_temperature;
+
 void Light_sensor_ADC_init(void);
 
 void USART_debug_PORT_init(void);
 void USART_debug_CLOCK_init(void);
 void USART_debug_init(void);
+
+void I2C_temperature_CLOCK_init(void);
+void I2C_temperature_init(void);
+void I2C_temperature_PORT_init(void);
 
 void delay_driver_init(void);
 

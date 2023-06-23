@@ -100,7 +100,8 @@ examples/driver_examples.d examples/driver_examples.o: \
  ../hal/utils/include/utils_assert.h \
  ../hal/include/hpl_missing_features.h ../hal/include/hal_usart_sync.h \
  ../hal/include/hal_io.h ../hal/include/hpl_usart_sync.h \
- ../hal/include/hpl_usart.h ../hal/utils/include/utils.h
+ ../hal/include/hpl_usart.h ../hal/include/hal_i2c_m_sync.h \
+ ../hal/include/hpl_i2c_m_sync.h ../hal/utils/include/utils.h
 
 ../examples/driver_examples.h:
 
@@ -365,5 +366,9 @@ C:\Program\ Files\ (x86)\Atmel\Studio\7.0\Packs\atmel\SAMR21_DFP\1.1.72\include/
 ../hal/include/hpl_usart_sync.h:
 
 ../hal/include/hpl_usart.h:
+
+../hal/include/hal_i2c_m_sync.h:
+
+../hal/include/hpl_i2c_m_sync.h:
 
 ../hal/utils/include/utils.h:

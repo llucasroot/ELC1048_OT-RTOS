@@ -16,6 +16,8 @@ void Light_sensor_ADC_example(void);
 
 void USART_debug_example(void);
 
+void I2C_temperature_example(void);
+
 void delay_example(void);
 
 #ifdef __cplusplus

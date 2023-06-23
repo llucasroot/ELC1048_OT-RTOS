@@ -32,6 +32,8 @@ static uint8_t Light_sensor_ADC_map[LIGHT_SENSOR_ADC_CH_MAX + 1];
 
 struct usart_sync_descriptor USART_debug;
 
+struct i2c_m_sync_desc I2C_temperature;
+
 /**
  * \brief ADC initialization function
  *
@@ -77,6 +79,44 @@ void USART_debug_init(void)
 	USART_debug_PORT_init();
 }
 
+void I2C_temperature_PORT_init(void)
+{
+
+	gpio_set_pin_pull_mode(PA16,
+	                       // <y> Pull configuration
+	                       // <id> pad_pull_config
+	                       // <GPIO_PULL_OFF"> Off
+	                       // <GPIO_PULL_UP"> Pull-up
+	                       // <GPIO_PULL_DOWN"> Pull-down
+	                       GPIO_PULL_OFF);
+
+	gpio_set_pin_function(PA16, PINMUX_PA16C_SERCOM1_PAD0);
+
+	gpio_set_pin_pull_mode(PA17,
+	                       // <y> Pull configuration
+	                       // <id> pad_pull_config
+	                       // <GPIO_PULL_OFF"> Off
+	                       // <GPIO_PULL_UP"> Pull-up
+	                       // <GPIO_PULL_DOWN"> Pull-down
+	                       GPIO_PULL_OFF);
+
+	gpio_set_pin_function(PA17, PINMUX_PA17C_SERCOM1_PAD1);
+}
+
+void I2C_temperature_CLOCK_init(void)
+{
+	_pm_enable_bus_clock(PM_BUS_APBC, SERCOM1);
+	_gclk_enable_channel(SERCOM1_GCLK_ID_CORE, CONF_GCLK_SERCOM1_CORE_SRC);
+	_gclk_enable_channel(SERCOM1_GCLK_ID_SLOW, CONF_GCLK_SERCOM1_SLOW_SRC);
+}
+
+void I2C_temperature_init(void)
+{
+	I2C_temperature_CLOCK_init();
+	i2c_m_sync_init(&I2C_temperature, SERCOM1);
+	I2C_temperature_PORT_init();
+}
+
 void delay_driver_init(void)
 {
 	delay_init(SysTick);
@@ -103,6 +143,8 @@ void system_init(void)
 	Light_sensor_ADC_init();
 
 	USART_debug_init();
+
+	I2C_temperature_init();
 
 	delay_driver_init();
 }
