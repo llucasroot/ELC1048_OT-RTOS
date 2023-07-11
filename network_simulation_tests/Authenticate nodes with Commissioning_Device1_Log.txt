@@ -1,0 +1,34 @@
+root@51bb17d041fd:/# /openthread/build/examples/apps/cli/ot-cli-ftd 1
+> dataset init new
+Done
+> dataset
+Active Timestamp: 1
+Channel: 11
+Channel Mask: 0x07fff800
+Ext PAN ID: 3a4adc001d712289
+Mesh Local Prefix: fd7f:5b92:71af:c9f4::/64
+Network Key: 838a5351d3ea82673e314b1dfb55b368
+Network Name: OpenThread-c147
+PAN ID: 0xc147
+PSKc: 09b6340fde4b54e2677f6251795f8a9f
+Security Policy: 672 onrc 0
+Done
+> dataset commit active
+Done
+> ifconfig up
+Done
+> thread start
+Done
+> state
+leader
+Done
+> commissioner start
+Commissioner: petitioning
+Done
+> Commissioner: active
+commissioner joiner add * J01NME
+Done
+> Commissioner: Joiner start d65e64fa83f81cf7
+Commissioner: Joiner connect d65e64fa83f81cf7
+Commissioner: Joiner finalize d65e64fa83f81cf7
+Commissioner: Joiner end d65e64fa83f81cf7

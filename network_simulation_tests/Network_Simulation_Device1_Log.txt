@@ -1,0 +1,63 @@
+lucas@lucas:~$ sudo docker pull openthread/environment:latest
+latest: Pulling from openthread/environment
+3153aa388d02: Pull complete
+bfa34a604f93: Pull complete
+0cf836dce498: Pull complete
+56995b06762c: Pull complete
+4e20a9d6543a: Pull complete
+Digest: sha256:72eea82443a3e8a5b481ffeb8ab36125fe57a9244fd7d23e07d82062914d5de6
+Status: Downloaded newer image for openthread/environment:latest
+docker.io/openthread/environment:latest
+
+lucas@lucas:~$ docker run --name codelab_otsim_ctnr -it --rm \--sysctl net.ipv6.conf.all.disable_ipv6=0 \--cap-add=net_admin openthread/environment bash
+docker: Got permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Post "http://%2Fvar%2Frun%2Fdocker.sock/v1.24/containers/create?name=codelab_otsim_ctnr": dial unix /var/run/docker.sock: connect: permission denied.
+See 'docker run --help'.
+lucas@lucas:~$ sudo docker run --name codelab_otsim_ctnr -it --rm \--sysctl net.ipv6.conf.all.disable_ipv6=0 \--cap-add=net_admin openthread/environment bash
+
+root@51bb17d041fd:/# /openthread/build/examples/apps/cli/ot-cli-ftd 1
+> dataset init new
+Done
+> dataset
+Active Timestamp: 1
+Channel: 26
+Channel Mask: 0x07fff800
+Ext PAN ID: 5c907b384ba54529
+Mesh Local Prefix: fd1f:2fd1:e68:2fe::/64
+Network Key: b143b51c869cd09b6300f4ff0e202148
+Network Name: OpenThread-2852
+PAN ID: 0x2852
+PSKc: 16971bca11bfe66081dcaaee36e4d3e6
+Security Policy: 672 onrc 0
+Done
+> dataset commit active
+Done
+> ifconfig up
+Done
+> thread start
+Done
+> state
+leader
+Done
+> ipaddr
+fd1f:2fd1:e68:2fe:0:ff:fe00:fc00
+fd1f:2fd1:e68:2fe:0:ff:fe00:0
+fd1f:2fd1:e68:2fe:1024:4d2:2719:beb5
+fe80:0:0:0:f818:7038:d77:b7fd
+Done
+> state
+leader
+Done
+> router table
+| ID | RLOC16 | Next Hop | Path Cost | LQ In | LQ Out | Age | Extended MAC     | Link |
++----+--------+----------+-----------+-------+--------+-----+------------------+------+
+|  0 | 0x0000 |       63 |         0 |     0 |      0 |   0 | fa1870380d77b7fd |    0 |
+| 43 | 0xac00 |       63 |         0 |     3 |      3 |   7 | 52b8fac082561ce2 |    1 |
+
+Done
+> thread stop
+Done
+> state
+disabled
+Done
+> thread stop
+Done

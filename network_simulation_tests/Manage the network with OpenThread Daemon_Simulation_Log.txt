@@ -1,0 +1,18 @@
+root@f31ef65312a2:/# mkdir -p /dev/net && mknod /dev/net/tun c 10 200
+root@f31ef65312a2:/# chmod 600 /dev/net/tun
+root@f31ef65312a2:/# openthread/build/posix/src/posix/ot-daemon -v \ 'spinel+hdlc+forkpty:///openthread/
+build/examples/apps/ncp/ot-rcp?forkpty-arg=2'
+openthread/build/posix/src/posix/ot-daemon[23]: Running OPENTHREAD/e6df00d; POSIX; Jul 10 2023 20:39:21
+openthread/build/posix/src/posix/ot-daemon[23]: Thread version: 4
+openthread/build/posix/src/posix/ot-daemon[23]: Thread interface: wpan0
+openthread/build/posix/src/posix/ot-daemon[23]: RCP version: OPENTHREAD/e6df00d; SIMULATION; Jul 10 2023 20:38:09
+openthread/build/posix/src/posix/ot-daemon[23]: 00:04:13.766 [-] --------------: =========[[THCI] direction=send | type=JOIN_FIN.req | len=039]==========
+openthread/build/posix/src/posix/ot-daemon[23]: 00:04:13.766 [-] --------------: | 10 01 01 21 0A 4F 50 45 | 4E 54 48 52 45 41 44 22 | ...!.OPENTHREAD"
+openthread/build/posix/src/posix/ot-daemon[23]: 00:04:13.766 [-] --------------: | 05 50 4F 53 49 58 23 07 | 65 36 64 66 30 30 64 25 | .POSIX#.e6df00d%
+openthread/build/posix/src/posix/ot-daemon[23]: 00:04:13.766 [-] --------------: | 06 18 B4 30 00 00 10 .. | .. .. .. .. .. .. .. .. | ..40............
+openthread/build/posix/src/posix/ot-daemon[23]: 00:04:13.766 [-] --------------: ------------------------------------------------------------------------
+openthread/build/posix/src/posix/ot-daemon[23]: 00:04:13.771 [-] --------------: =========[[THCI] direction=recv | type=JOIN_FIN.rsp | len=003]==========
+openthread/build/posix/src/posix/ot-daemon[23]: 00:04:13.771 [-] --------------: | 10 01 01 .. .. .. .. .. | .. .. .. .. .. .. .. .. | ................
+openthread/build/posix/src/posix/ot-daemon[23]: 00:04:13.771 [-] --------------: ------------------------------------------------------------------------
+openthread/build/posix/src/posix/ot-daemon[23]: 00:04:13.823 [-] --------------: [THCI] direction=recv | type=JOIN_ENT.ntf
+openthread/build/posix/src/posix/ot-daemon[23]: 00:04:13.827 [-] --------------: [THCI] direction=send | type=JOIN_ENT.rsp

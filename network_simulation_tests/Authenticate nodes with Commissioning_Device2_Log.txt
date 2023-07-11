@@ -1,0 +1,11 @@
+root@51bb17d041fd:/# /openthread/build/examples/apps/cli/ot-cli-ftd 2
+> ifconfig up
+Done
+> joiner start J01NME
+Done
+> Join success
+thread start
+Done
+> state
+router
+Done

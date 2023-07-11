@@ -1,0 +1,51 @@
+root@f31ef65312a2:/# /openthread/build/posix/src/posix/ot-ctl
+state
+disabled
+Done
+> eui64
+18b4300000000002
+Done
+> ifconfig up
+Done
+> joiner start J01NME
+Done
+> Join success
+thread start
+Done
+> state
+child
+Done
+> state
+router
+Done
+> exit
+root@f31ef65312a2:/# ping6 fd29:9896:eb87:eff5:ef20:8680:5edb:f9c7
+PING fd29:9896:eb87:eff5:ef20:8680:5edb:f9c7 (fd29:9896:eb87:eff5:ef20:8680:5edb:f9c7): 56 data bytes
+64 bytes from fd29:9896:eb87:eff5:ef20:8680:5edb:f9c7: icmp_seq=0 ttl=64 time=12.682 ms
+64 bytes from fd29:9896:eb87:eff5:ef20:8680:5edb:f9c7: icmp_seq=1 ttl=64 time=4.632 ms
+64 bytes from fd29:9896:eb87:eff5:ef20:8680:5edb:f9c7: icmp_seq=2 ttl=64 time=3.334 ms
+64 bytes from fd29:9896:eb87:eff5:ef20:8680:5edb:f9c7: icmp_seq=3 ttl=64 time=4.245 ms
+64 bytes from fd29:9896:eb87:eff5:ef20:8680:5edb:f9c7: icmp_seq=4 ttl=64 time=2.979 ms
+64 bytes from fd29:9896:eb87:eff5:ef20:8680:5edb:f9c7: icmp_seq=5 ttl=64 time=4.539 ms
+64 bytes from fd29:9896:eb87:eff5:ef20:8680:5edb:f9c7: icmp_seq=6 ttl=64 time=4.885 ms
+64 bytes from fd29:9896:eb87:eff5:ef20:8680:5edb:f9c7: icmp_seq=7 ttl=64 time=1.776 ms
+64 bytes from fd29:9896:eb87:eff5:ef20:8680:5edb:f9c7: icmp_seq=8 ttl=64 time=2.917 ms
+64 bytes from fd29:9896:eb87:eff5:ef20:8680:5edb:f9c7: icmp_seq=9 ttl=64 time=3.604 ms
+64 bytes from fd29:9896:eb87:eff5:ef20:8680:5edb:f9c7: icmp_seq=10 ttl=64 time=2.870 ms
+64 bytes from fd29:9896:eb87:eff5:ef20:8680:5edb:f9c7: icmp_seq=11 ttl=64 time=4.415 ms
+64 bytes from fd29:9896:eb87:eff5:ef20:8680:5edb:f9c7: icmp_seq=12 ttl=64 time=2.026 ms
+64 bytes from fd29:9896:eb87:eff5:ef20:8680:5edb:f9c7: icmp_seq=13 ttl=64 time=5.311 ms
+64 bytes from fd29:9896:eb87:eff5:ef20:8680:5edb:f9c7: icmp_seq=14 ttl=64 time=4.811 ms
+64 bytes from fd29:9896:eb87:eff5:ef20:8680:5edb:f9c7: icmp_seq=15 ttl=64 time=5.030 ms
+64 bytes from fd29:9896:eb87:eff5:ef20:8680:5edb:f9c7: icmp_seq=16 ttl=64 time=3.257 ms
+64 bytes from fd29:9896:eb87:eff5:ef20:8680:5edb:f9c7: icmp_seq=17 ttl=64 time=1.498 ms
+64 bytes from fd29:9896:eb87:eff5:ef20:8680:5edb:f9c7: icmp_seq=18 ttl=64 time=1.932 ms
+64 bytes from fd29:9896:eb87:eff5:ef20:8680:5edb:f9c7: icmp_seq=19 ttl=64 time=2.067 ms
+64 bytes from fd29:9896:eb87:eff5:ef20:8680:5edb:f9c7: icmp_seq=20 ttl=64 time=1.839 ms
+64 bytes from fd29:9896:eb87:eff5:ef20:8680:5edb:f9c7: icmp_seq=21 ttl=64 time=5.091 ms
+
+64 bytes from fd29:9896:eb87:eff5:ef20:8680:5edb:f9c7: icmp_seq=22 ttl=64 time=3.211 ms
+^C64 bytes from fd29:9896:eb87:eff5:ef20:8680:5edb:f9c7: icmp_seq=23 ttl=64 time=3.848 ms
+--- fd29:9896:eb87:eff5:ef20:8680:5edb:f9c7 ping statistics ---
+24 packets transmitted, 24 packets received, 0% packet loss
+round-trip min/avg/max/stddev = 1.498/3.867/12.682/2.183 ms

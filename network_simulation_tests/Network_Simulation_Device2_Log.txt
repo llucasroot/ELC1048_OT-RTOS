@@ -1,0 +1,40 @@
+lucas@lucas:~$ sudo docker exec -it codelab_otsim_ctnr bash
+[sudo] password for lucas:
+root@51bb17d041fd:/# /openthread/build/examples/apps/cli/ot-cli-ftd 2
+> dataset networkkey b143b51c869cd09b6300f4ff0e202148
+Done
+> dataset panid 0x2852
+Done
+> dataset commit active
+Done
+> ifconfig up
+Done
+> thread start
+Done
+> state
+detached
+Done
+> state
+child
+Done
+> state
+router
+Done
+> rloc16
+ac00
+Done
+> ping fd1f:2fd1:e68:2fe:1024:4d2:2719:beb5
+16 bytes from fd1f:2fd1:e68:2fe:1024:4d2:2719:beb5: icmp_seq=1 hlim=64 time=3ms
+1 packets transmitted, 1 packets received. Packet loss = 0.0%. Round-trip min/avg/max = 3/3.0/3 ms.
+Done
+> state
+router
+Done
+> ping fd1f:2fd1:e68:2fe:1024:4d2:2719:beb5
+1 packets transmitted, 0 packets received. Packet loss = 100.0%.
+Done
+> state
+leader
+Done
+> thread stop
+Done
