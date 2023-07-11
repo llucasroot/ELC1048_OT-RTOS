@@ -56,14 +56,14 @@ void emac_init(void)
 #define EMAC_TX_BUFFERS                               8
 //Define maximum retry time for a PHY read/write operation.
 #define MAC_PHY_RETRY_MAX                             1000000
-//Define the MAC address. 00:04:25:1C:A0:02 is the address reserved for ATMEL, application should always change this address to its' own.
+//DEFINIÇÃO DE MAC ADDRESS. 00:04:25:1C:A0:02 ENDEREÇO PADRÃO ATMEL, application should always change this address to its' own.
 #define ETHERNET_CONF_ETHADDR0                        0x00
 #define ETHERNET_CONF_ETHADDR1                        0x04
 #define ETHERNET_CONF_ETHADDR2                        0x25
 #define ETHERNET_CONF_ETHADDR3                        0x1C
 #define ETHERNET_CONF_ETHADDR4                        0xA0
 #define ETHERNET_CONF_ETHADDR5                        0x02
-//Define the IP address configration used in the application. When DHCP is enabled, this configuration is not effected.
+//DEFINIÇÕES DE IPV4, GATEWAY E MÁSCARA SUB-REDE
 #define ETHERNET_CONF_IPADDR0                         192
 #define ETHERNET_CONF_IPADDR1                         168
 #define ETHERNET_CONF_IPADDR2                         0
