@@ -1,0 +1,42 @@
+root@f31ef65312a2:/# /openthread/build/examples/apps/cli/ot-cli-ftd 1
+> dataset init new
+Done
+> dataset
+Active Timestamp: 1
+Channel: 23
+Channel Mask: 0x07fff800
+Ext PAN ID: fa2fef46dfc1e777
+Mesh Local Prefix: fd29:9896:eb87:eff5::/64
+Network Key: 705a115a2612aa72867f5b7bfe35c97d
+Network Name: OpenThread-260a
+PAN ID: 0x260a
+PSKc: 9fb1c26e13b889c139ca097ab2faa69e
+Security Policy: 672 onrc 0
+Done
+> dataset commit active
+Done
+> ifconfig up
+Done
+> thread start
+Done
+> ipaddr
+fd29:9896:eb87:eff5:ef20:8680:5edb:f9c7
+fe80:0:0:0:ce5:c8b6:1719:8efd
+Done
+> ipaddr
+fd29:9896:eb87:eff5:0:ff:fe00:fc00
+fd29:9896:eb87:eff5:0:ff:fe00:c800
+fd29:9896:eb87:eff5:ef20:8680:5edb:f9c7
+fe80:0:0:0:ce5:c8b6:1719:8efd
+Done
+> commissioner start
+Commissioner: petitioning
+Done
+> Commissioner: active
+> commissioner joiner add 18b4300000000002 J01NME
+Done
+> Commissioner: Joiner start d65e64fa83f81cf7
+Commissioner: Joiner connect d65e64fa83f81cf7
+Commissioner: Joiner finalize d65e64fa83f81cf7
+Commissioner: Joiner end d65e64fa83f81cf7
+Commissioner: Joiner remove d65e64fa83f81cf7
