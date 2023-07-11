@@ -1,0 +1,221 @@
+*************************************************************
+FileName = BNO055_Xplained_pro.GBR
+AutoAperture = True
+*************************************************************
+Generating : Top Layer LF-signals
+      File : BNO055_Xplained_pro.GTL
+
+    Adding Layer      : Top Layer LF-signals
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D10
+    D11
+    D12
+    D13
+    D14
+    D15
+    D16
+    D17
+    D18
+    D19
+    D20
+    D21
+    D22
+    D23
+    D24
+    D25
+    D26
+    D27
+    D28
+    D29
+    D30
+    D31
+    D32
+    D33
+    D34
+*************************************************************
+
+*************************************************************
+Generating : Internal Plane 1
+      File : BNO055_Xplained_pro.GP1
+
+    Adding Layer      : Internal Plane 1
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D35
+    D36
+    D37
+    D38
+    D39
+    D40
+    D41
+*************************************************************
+
+*************************************************************
+Generating : Internal Plane 2
+      File : BNO055_Xplained_pro.GP2
+
+    Adding Layer      : Internal Plane 2
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D35
+    D36
+    D37
+    D38
+    D39
+    D40
+    D41
+*************************************************************
+
+*************************************************************
+Generating : Bottom Layer LF-signals
+      File : BNO055_Xplained_pro.GBL
+
+    Adding Layer      : Bottom Layer LF-signals
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D25
+    D28
+    D29
+    D30
+    D31
+    D32
+    D33
+    D34
+    D42
+*************************************************************
+
+*************************************************************
+Generating : Top Overlay
+      File : BNO055_Xplained_pro.GTO
+
+    Adding Layer      : Top Overlay
+
+
+Used DCodes :
+    D24
+    D25
+    D43
+    D44
+*************************************************************
+
+*************************************************************
+Generating : Top Paste
+      File : BNO055_Xplained_pro.GTP
+
+    Adding Layer      : Top Paste
+
+    Adding Layer      : Top Layer LF-signals
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D10
+    D11
+    D12
+    D13
+    D14
+    D15
+    D16
+    D17
+    D18
+    D19
+    D20
+    D21
+    D22
+    D23
+    D45
+*************************************************************
+
+*************************************************************
+Generating : Top Solder
+      File : BNO055_Xplained_pro.GTS
+
+    Adding Layer      : Top Solder
+
+    Adding Layer      : Top Layer LF-signals
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D30
+    D46
+    D47
+    D48
+    D49
+    D50
+    D51
+    D52
+    D53
+    D54
+    D55
+    D56
+    D57
+    D58
+    D59
+    D60
+    D61
+    D62
+    D63
+    D64
+    D65
+*************************************************************
+
+*************************************************************
+Generating : Bottom Solder
+      File : BNO055_Xplained_pro.GBS
+
+    Adding Layer      : Bottom Solder
+
+    Adding Layer      : Bottom Layer LF-signals
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D30
+    D61
+    D62
+    D63
+    D64
+    D65
+    D66
+*************************************************************
+
+*************************************************************
+Generating : Bottom Overlay
+      File : BNO055_Xplained_pro.GBO
+
+    Adding Layer      : Bottom Overlay
+
+
+Used DCodes :
+    D24
+    D25
+*************************************************************
+
+*************************************************************
+Generating : Mechanical 1
+      File : BNO055_Xplained_pro.GM1
+
+    Adding Layer      : Mechanical 1
+
+
+Used DCodes :
+    D43
+*************************************************************
+

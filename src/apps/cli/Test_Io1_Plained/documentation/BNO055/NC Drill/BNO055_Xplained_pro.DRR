@@ -1,0 +1,18 @@
+---------------------------------------------------------------------------
+NCDrill File Report For: BNO055_Xplained_pro.PcbDoc   12/5/2014  12:04:23 PM
+---------------------------------------------------------------------------
+
+Layer Pair : Top Layer LF-signals to Bottom Layer LF-signals
+ASCII RoundHoles File : BNO055_Xplained_pro.TXT
+EIA File   : BNO055_Xplained_pro.DRL
+
+Tool         Hole Size           Hole Type     Hole Count Plated       Tool Travel
+---------------------------------------------------------------------------
+T1        11.8mil (0.29972mm)      Round          34               5.05 Inch (128.27 mm)
+T2        25.6mil (0.65024mm)      Round          10               0.45 Inch (11.43 mm)
+T3        39.4mil (1.00076mm)      Round          25               3.27 Inch (83.06 mm)
+T4        78.7mil (1.99898mm)      Round          2         NPTH   0.60 Inch (15.24 mm)
+---------------------------------------------------------------------------
+Totals                                            71               9.37 Inch (238.01 mm)
+
+Total Processing Time (hh:mm:ss) : 00:00:00
